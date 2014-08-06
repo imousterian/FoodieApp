@@ -10,8 +10,10 @@ class CreateRecipes < ActiveRecord::Migration
       t.integer :cuisine_id
       t.text :ingredients
       t.text :procedure
+      t.integer :user_id
 
       t.timestamps
     end
+    add_index :recipes, :user_id
   end
 end
