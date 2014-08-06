@@ -1,0 +1,42 @@
+<table class = 'table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Preference</th>
+      <th>Type</th>
+      <th>Cuisine</th>
+      <th>Servings</th>
+      <th>Time</th>
+      <th>Difficulty</th>
+      <th>Ingredients</th>
+      <th>Procedure</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.title %></td>
+        <td><%= recipe.food_preference.name %></td>
+        <td><%= recipe.food_type.name %></td>
+        <td><%= recipe.cuisine.name %></td>
+        <td><%= recipe.servings %></td>
+        <td><%= recipe.cooking_time %></td>
+        <td><%= recipe.difficulty_level %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.procedure %></td>
+        <td><%= link_to 'Show', recipe_path(recipe), :class => "btn btn-primary btn-xs" %></td>
+        <% if user_signed_in? %>
+            <td><%= link_to 'Edit', edit_recipe_path(recipe), :class => "btn btn-success btn-xs" %></td>
+            <td><%= link_to 'Destroy', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' },
+                :class => "btn btn-danger btn-xs" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path, :class => "btn btn-default btn-sm" %>

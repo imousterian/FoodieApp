@@ -1,0 +1,18 @@
+<div class="col-md-2">
+    <div class="panel-group" id="accordion">
+        <% all_foods.each_with_index do |food, index| %>
+            <div class="panel panel-primary" id="panels">
+                <div class="panel-heading">
+                    <h7 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=index%>">
+                            <%= all_foods_titles[index] %>
+                        </a>
+                    </h7>
+                </div>
+                <div id="collapse<%=index%>" class="panel-collapse collapse">
+                    <%= render partial: "layouts/food_collapsible", locals: {object: food} %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

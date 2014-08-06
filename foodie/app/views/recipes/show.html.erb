@@ -1,0 +1,53 @@
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> &nbsp;| &nbsp;<%= link_to 'Back to recipes', recipes_path %>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-4">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th><h3><%= @recipe.title%> recipe</h3></th>
+                    <th></th>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><strong>Title:</strong> </td>
+                    <td> <%= @recipe.title %> </td>
+                </tr>
+                <tr>
+                    <td><strong>Preference:</strong></td>
+                    <td><%= @recipe.food_preference.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Type:</strong></td>
+                    <td><%= @recipe.food_type.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Cuisine:</strong></td>
+                    <td><%= @recipe.cuisine.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Servings:</strong></td>
+                    <td><%= @recipe.servings %></td>
+                </tr>
+                <tr>
+                    <td><strong>Time:</strong></td>
+                    <td><%= @recipe.cooking_time %> </td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty:</strong></td>
+                    <td><%= @recipe.difficulty_level %></td>
+                </tr>
+                <tr>
+                    <td><strong>Ingredients:</strong></td>
+                    <td><%= @recipe.ingredients %></td>
+                </tr>
+                <tr>
+                    <td><strong>Procedure:</strong></td>
+                    <td><%= @recipe.procedure %></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
